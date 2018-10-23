@@ -1,0 +1,4 @@
+<h1>home page</h1>
+<p> welcome <%= current_user.full_name%> </p>
+<%= link_to 'Create Food', new_food_path%>
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete%>

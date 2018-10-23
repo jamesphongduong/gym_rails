@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type_of_dish: MyString
+  calories: 1
+  protein: 1
+  carbs: 1
+  fat: 1
+  description: MyText
+  serving_size_and_ingredients: MyText
+  user: one
+
+two:
+  name: MyString
+  type_of_dish: MyString
+  calories: 1
+  protein: 1
+  carbs: 1
+  fat: 1
+  description: MyText
+  serving_size_and_ingredients: MyText
+  user: two

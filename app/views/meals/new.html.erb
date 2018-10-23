@@ -1,0 +1,49 @@
+<h1> create new meal </h1>
+
+<%# url:meals_path to post to routes of /meals %>
+<%= form_with model: @meal, local: true, url: meals_path do |f| %>
+<%# name of meal %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ <%# type of meal %>
+  <p>
+    <%= f.label :type_of_dish %><br>
+    <%= f.text_area :type_of_dish %>
+  </p>
+<%# description %>
+    <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+<%# serving size %>
+    <p>
+    <%= f.label :serving_size_and_ingredients %><br>
+    <%= f.text_area :serving_size_and_ingredients %>
+  </p>
+<%# calories %>
+    <p>
+    <%= f.label :calories %><br>
+    <%= f.number_field :calories %>
+  </p>
+<%# protein %>
+    <p>
+    <%= f.label :protein %><br>
+    <%= f.number_field :protein %>
+  </p>
+<%# carbs %>
+    <p>
+    <%= f.label :carbs %><br>
+    <%= f.number_field :carbs %>
+  </p>
+<%# fat %>
+    <p>
+    <%= f.label :fat %><br>
+    <%= f.number_field :fat %>
+  </p>
+<%# submit button %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
