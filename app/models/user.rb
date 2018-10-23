@@ -3,5 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :foods
+  has_many :foods, dependent: :destroy
+  mount_uploader :profile_pic, ProfilePicUploader
 end

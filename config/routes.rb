@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :dummies
   resources :foods
   devise_for :users
   resources :meals
