@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_221006) do
+ActiveRecord::Schema.define(version: 2018_10_24_105232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.string "type_of_dish"
+    t.text "description"
     t.integer "calories"
     t.integer "protein"
     t.integer "carbs"
     t.integer "fat"
-    t.text "description"
-    t.text "serving_size_and_ingredients"
+    t.string "serving_size"
+    t.string "ingredient"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 2018_10_23_221006) do
     t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
+  create_table "smoothies", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "calories"
+    t.integer "protein"
+    t.integer "carbs"
+    t.integer "fat"
+    t.string "serving_size"
+    t.string "ingredient"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_smoothies_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,4 +76,5 @@ ActiveRecord::Schema.define(version: 2018_10_23_221006) do
 
   add_foreign_key "foods", "users"
   add_foreign_key "meals", "users"
+  add_foreign_key "smoothies", "users"
 end

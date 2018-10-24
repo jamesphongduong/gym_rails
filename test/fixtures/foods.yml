@@ -2,22 +2,22 @@
 
 one:
   name: MyString
-  type_of_dish: MyString
+  description: MyText
   calories: 1
   protein: 1
   carbs: 1
   fat: 1
-  description: MyText
-  serving_size_and_ingredients: MyText
+  serving_size: MyString
+  ingredient: MyString
   user: one
 
 two:
   name: MyString
-  type_of_dish: MyString
+  description: MyText
   calories: 1
   protein: 1
   carbs: 1
   fat: 1
-  description: MyText
-  serving_size_and_ingredients: MyText
+  serving_size: MyString
+  ingredient: MyString
   user: two
