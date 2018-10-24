@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.side {
+    display: flex;
+    border: 1px solid black;
+}
