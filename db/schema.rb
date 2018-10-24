@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_105232) do
+ActiveRecord::Schema.define(version: 2018_10_24_130330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,21 +45,6 @@ ActiveRecord::Schema.define(version: 2018_10_24_105232) do
     t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
-  create_table "smoothies", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "calories"
-    t.integer "protein"
-    t.integer "carbs"
-    t.integer "fat"
-    t.string "serving_size"
-    t.string "ingredient"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_smoothies_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -70,11 +55,11 @@ ActiveRecord::Schema.define(version: 2018_10_24_105232) do
     t.datetime "updated_at", null: false
     t.string "full_name"
     t.text "profile_pic"
+    t.string "customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "foods", "users"
   add_foreign_key "meals", "users"
-  add_foreign_key "smoothies", "users"
 end

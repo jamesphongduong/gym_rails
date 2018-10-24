@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
             # )
 
             charge = Stripe::Charge.create(
-                :customer    => customer.id,
+                # :customer    => customer.id,
                 :amount      => @amount,
                 :description => 'Rails Stripe customer',
                 :currency    => 'aud',
