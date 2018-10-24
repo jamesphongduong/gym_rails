@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Foods</h1>
+<p> Currently logged in: <%= current_user.full_name %> </p>
 
 <table>
   <thead>
@@ -13,7 +14,7 @@
       <th>Fat</th>
       <th>Description</th>
       <th>Serving size and ingredients</th>
-      <th>User</th>
+      <%# <th>User</th> %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,10 +30,21 @@
         <td><%= food.fat %></td>
         <td><%= food.description %></td>
         <td><%= food.serving_size_and_ingredients %></td>
-        <td><%= food.user %></td>
-        <td><%= link_to 'Show', food %></td>
-        <td><%= link_to 'Edit', edit_food_path(food) %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <%
+=begin %>
+        (<td><%= food.user %></td>)
+        <%
+=end %>
+      
+
+        <% if current_user.id == food.user_id%>
+            <td><%= link_to 'Show', food %></td>
+            <td><%= link_to 'Edit', edit_food_path(food) %></td>
+            <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+            <td><%= link_to 'Show', food %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +52,5 @@
 
 <br>
 
-<%= link_to 'New Food', new_food_path %>
+<%= link_to 'create new food', new_food_path %>
+<%= link_to 'log out', destroy_user_session_path, method: :delete%>

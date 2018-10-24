@@ -13,42 +13,42 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :type_of_dish %>
-    <%= form.text_field :type_of_dish %>
+    <%= form.select :type_of_dish, ['smoothie','meal'] %>
   </div>
 
   <div class="field">
     <%= form.label :calories %>
-    <%= form.number_field :calories %>
+    <%= form.number_field :calories, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :protein %>
-    <%= form.number_field :protein %>
+    <%= form.number_field :protein, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :carbs %>
-    <%= form.number_field :carbs %>
+    <%= form.number_field :carbs, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :fat %>
-    <%= form.number_field :fat %>
+    <%= form.number_field :fat, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :serving_size_and_ingredients %>
-    <%= form.text_area :serving_size_and_ingredients %>
+    <%= form.text_area :serving_size_and_ingredients, :required => true %>
   </div>
 
 

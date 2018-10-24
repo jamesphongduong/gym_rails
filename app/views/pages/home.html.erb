@@ -1,14 +1,17 @@
 <h1>home page</h1>
 <p> welcome <%= current_user.full_name%> </p>
 <div>
+   <%= image_tag current_user.profile_pic_url if current_user.profile_pic_url %>
+</div>
+<div>
     <%= link_to 'edit profile details', edit_user_registration_path %>
 </div>
 <div>
     <%= link_to 'create food', new_food_path%>
 </div>
 <div>
-    <%= link_to 'view foods', new_food_path%>
+    <%= link_to 'view foods', foods_path%>
 </div>
 <div>
-    <%= link_to 'sign out', destroy_user_session_path, method: :delete%>
+    <%= link_to 'log out', destroy_user_session_path, method: :delete%>
 </div>
